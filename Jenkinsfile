@@ -32,7 +32,7 @@ pipeline {
         }
       }
       steps {
-        sh 'jfrog rt upload --url http://172.31.26.184:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} webapp/target/webapp.war didiertest/'
+        sh 'jfrog rt upload --url http://172.31.26.184:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} webapp/target/webapp.war didiertest/${env.BUILD_ID}'
       }
     }
   
