@@ -1,6 +1,5 @@
 def img
 def dockerhost = '172.31.20.62'
-def artifactoryurl = 'http://172.31.26.184:8082/artifactory/'
 pipeline {
     agent any
     environment{
@@ -33,7 +32,7 @@ pipeline {
         }
       }
       steps {
-        sh 'jfrog rt upload --url ${artifactoryurl} --access-token ${ARTIFACTORY_ACCESS_TOKEN} webapp/target/webapp.war didiertest/'
+        sh 'jfrog rt upload --url http://172.31.26.184:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} webapp/target/webapp.war didiertest/'
       }
     }
   
